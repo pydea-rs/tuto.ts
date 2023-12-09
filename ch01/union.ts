@@ -10,3 +10,13 @@ console.log(test);
 test = {x: 3, y: 0.5};
 console.log(test);
 // test = 1; // Compile Error
+
+const neverUnderAge = (age: number): boolean | never => {
+    if(age <= 0)
+        throw Error("Fuck off please!"); // this will retun never 
+    return age < 18;
+}
+
+console.log(neverUnderAge(10));
+
+console.log(neverUnderAge(-1));
